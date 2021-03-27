@@ -5,40 +5,46 @@
   padding: 0;
   box-sizing: inherit; }
 
-/* setting root font size for better responsiveness */
-/* 100% font-size = 16px, 62.5% font-size = 10px --> easier calculations of rem */
-/* use % not pixels for the root font size to allow for browser accessibility  */
 html {
   font-size: 62.5%; }
 
 body {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  /* font-size: 16px; */
-  line-height: 1.7;
-  color: #777;
-  padding: 3rem;
   box-sizing: border-box; }
 
-.header {
-  height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
-  background-size: cover;
-  background-position: top;
-  position: relative;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
-  .header__logo-box {
-    position: absolute;
-    top: 4rem;
-    left: 4rem; }
-  .header__logo {
-    height: 3.5rem; }
-  .header__text-box {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center; }
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  80% {
+    transform: translateX(1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  80% {
+    transform: translateX(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInButton {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem; }
 
 .heading-primary {
   color: #fff;
@@ -52,8 +58,8 @@ body {
     font-weight: 400;
     letter-spacing: 3.5rem;
     /* animation-name: moveInLeft;
-      animation-duration: 1s;
-      animation-timing-function: ease-out; */
+        animation-duration: 1s;
+        animation-timing-function: ease-out; */
     /* shorthand  */
     animation: moveInLeft 1s ease-out;
     /* more-properties */
@@ -109,30 +115,22 @@ body {
   z-index: -1;
   transition: all 0.4s; }
 
-@keyframes moveInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-10rem); }
-  80% {
-    transform: translateX(1rem); }
-  100% {
-    opacity: 1;
-    transform: translate(0); } }
-
-@keyframes moveInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(10rem); }
-  80% {
-    transform: translateX(-1rem); }
-  100% {
-    opacity: 1;
-    transform: translate(0); } }
-
-@keyframes moveInButton {
-  0% {
-    opacity: 0;
-    transform: translateY(3rem); }
-  100% {
-    opacity: 1;
-    transform: translate(0); } }
+.header {
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
